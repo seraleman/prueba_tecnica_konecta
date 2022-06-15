@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 /**
  * Este entidad abstrae un módulo de venta.
@@ -21,6 +22,7 @@ public class Sale {
     private Long id;
 
     // Este campo representa la fecha de creación de la venta
+    @NotNull
     private Date created;
 
     /**
@@ -31,9 +33,11 @@ public class Sale {
      * la cual dice que en cada venta se vende un solo producto.
      */
     @OneToOne
+    @NotNull
     private Product product;
 
     // Este campor representa la cantidad del producto vendido
+    @NotNull
     private Integer quantity;
 
     // Getters y Setters

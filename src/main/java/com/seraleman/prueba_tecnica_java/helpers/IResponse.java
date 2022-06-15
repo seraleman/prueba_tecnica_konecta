@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 
 public interface IResponse {
 
@@ -18,8 +19,12 @@ public interface IResponse {
 
     ResponseEntity<Map<String, Object>> notFound(Object id);
 
-    ResponseEntity<Map<String, Object>> created(Object obj);
+    ResponseEntity<Map<String, Object>> created(Long id);
+
+    ResponseEntity<Map<String, Object>> updated();
 
     ResponseEntity<Map<String, Object>> deleted();
+
+    ResponseEntity<Map<String, Object>> invalidObject(BindingResult result);
 
 }

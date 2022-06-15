@@ -2,9 +2,12 @@ package com.seraleman.prueba_tecnica_java.controllers;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -55,23 +58,34 @@ public class CategoryRestController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<?> createCategory(@RequestBody Category category) {
+    public ResponseEntity<?> createCategory(@Valid @RequestBody Category category,
+            BindingResult result) {
+        if (result.hasErrors()) {
+            return response.invalidObject(result);
+        }
         try {
-            return response.created(categoryService.saveCategory(category));
+            return response.created(categoryService.saveCategory(category).getId());
         } catch (DataAccessException e) {
             return response.errorDataAccess(e);
         }
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateCategoryById(@RequestBody Category category, @PathVariable Long id) {
+    public ResponseEntity<?> updateCategoryById(@Valid @RequestBody Category category,
+            BindingResult result,
+            @PathVariable Long id) {
+
+        if (result.hasErrors()) {
+            return response.invalidObject(result);
+        }
         try {
             Category currentCategory = categoryService.getCategoryById(id);
             if (currentCategory == null) {
                 response.notFound(id);
             }
             currentCategory.setName(category.getName());
-            return response.created(categoryService.saveCategory(currentCategory));
+            categoryService.saveCategory(currentCategory);
+            return response.updated();
         } catch (DataAccessException e) {
             return response.errorDataAccess(e);
         }

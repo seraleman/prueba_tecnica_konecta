@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 /**
  * Esta entidad abstrae la clase Categoría,
@@ -19,6 +20,7 @@ public class Category {
     private Long id;
 
     // Nombre de cada categoría
+    @NotNull
     private String name;
 
     // Getters y Setters

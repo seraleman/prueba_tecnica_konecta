@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 /**
  * En esta entidad se abstrae la clase producto
@@ -21,15 +22,19 @@ public class Product {
     private Long id;
 
     // Este campo representa el "Nombre del producto"
+    @NotNull
     private String name;
 
     // Este campo representa la "Referencia del producto"
+    @NotNull
     private String reference;
 
     // Este campo representa el "Precio" del producto
+    @NotNull
     private Integer price;
 
     // Este campo representa el peso del producto
+    @NotNull
     private Integer weight;
 
     /**
@@ -37,12 +42,15 @@ public class Product {
      * Tiene una relación de muchas categorías para un producto
      */
     @ManyToOne
+    @NotNull
     private Category category;
 
     // Este campor representa el "Stock" del producto
+    @NotNull
     private Integer stock;
 
     // Este campo representa la "Fecha de creación" del producto
+    @NotNull
     private Date created;
 
     // Getters y Setters

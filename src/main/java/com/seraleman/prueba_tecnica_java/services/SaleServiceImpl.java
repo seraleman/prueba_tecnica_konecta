@@ -3,10 +3,12 @@ package com.seraleman.prueba_tecnica_java.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.seraleman.prueba_tecnica_java.models.Sale;
 import com.seraleman.prueba_tecnica_java.repositories.ISaleDao;
 
+@Service
 public class SaleServiceImpl implements ISaleService {
 
     @Autowired
