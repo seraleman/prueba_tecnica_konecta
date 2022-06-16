@@ -8,9 +8,16 @@ import org.springframework.stereotype.Service;
 import com.seraleman.prueba_tecnica_java.models.Product;
 import com.seraleman.prueba_tecnica_java.repositories.IProductDao;
 
+/**
+ * Clase que implementa IProductService
+ */
 @Service
 public class ProductServiceImpl implements IProductService {
 
+    /**
+     * Se inyecta la interface DAO (Data Acces Object) de Product para tener acceso
+     * a sus métodos
+     */
     @Autowired
     private IProductDao productDao;
 

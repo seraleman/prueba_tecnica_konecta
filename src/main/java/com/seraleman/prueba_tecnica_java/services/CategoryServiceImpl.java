@@ -8,9 +8,16 @@ import org.springframework.stereotype.Service;
 import com.seraleman.prueba_tecnica_java.models.Category;
 import com.seraleman.prueba_tecnica_java.repositories.ICategoryDao;
 
+/**
+ * Clase que implementa ICategoryService
+ */
 @Service
 public class CategoryServiceImpl implements ICategoryService {
 
+    /**
+     * Se inyecta la interface DAO (Data Acces Object) de Category para tener acceso
+     * a sus métodos
+     */
     @Autowired
     private ICategoryDao categoryDao;
 

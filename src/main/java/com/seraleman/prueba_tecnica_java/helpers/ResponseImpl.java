@@ -13,9 +13,13 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 
+/**
+ * Esta clase implementa la interface IResponse
+ */
 @Component
 public class ResponseImpl implements IResponse {
 
+    // Se declara el atributo response que se será el enviado en tora respuesta.
     private Map<String, Object> response;
 
     @Override
@@ -92,4 +96,13 @@ public class ResponseImpl implements IResponse {
         response.put("errors", errors);
         return new ResponseEntity<Map<String, Object>>(this.response, HttpStatus.BAD_REQUEST);
     }
+
+    @Override
+    public ResponseEntity<Map<String, Object>> insufficient() {
+        response = new HashMap<>();
+        response.put("message", "No hay suficientes unidades para actualizar la venta");
+        return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+
+    }
+
 }

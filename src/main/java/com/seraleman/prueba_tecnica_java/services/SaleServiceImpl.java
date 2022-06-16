@@ -8,9 +8,16 @@ import org.springframework.stereotype.Service;
 import com.seraleman.prueba_tecnica_java.models.Sale;
 import com.seraleman.prueba_tecnica_java.repositories.ISaleDao;
 
+/**
+ * Clase que implementa ISaleService
+ */
 @Service
 public class SaleServiceImpl implements ISaleService {
 
+    /**
+     * Se inyecta la interface DAO (Data Acces Object) de Sale para tener acceso
+     * a sus métodos
+     */
     @Autowired
     private ISaleDao saleDao;
 

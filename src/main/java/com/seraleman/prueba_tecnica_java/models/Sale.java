@@ -26,17 +26,16 @@ public class Sale {
     private Date created;
 
     /**
-     * Este campo representa el producto vendido
-     * Tiene una relación de un producto para una venta
+     * Este campo representa el producto vendido.
+     * Tiene una relación de un producto para una venta.
      * 
-     * Nota: Me apego a lo que solicita la prueba,
-     * la cual dice que en cada venta se vende un solo producto.
+     * Nota: La prueba dice que en cada venta se vende un solo producto.
      */
     @OneToOne
     @NotNull
     private Product product;
 
-    // Este campor representa la cantidad del producto vendido
+    // Este campo representa la cantidad del producto vendido
     @NotNull
     private Integer quantity;
 
