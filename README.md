@@ -10,8 +10,8 @@
 &nbsp;4.2 [Base de Datos](#base-de-datos)  
 &nbsp;4.3 [Endpoints](#endpoints)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.3.1 [Catagoría](#categorías-category)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.3.1 [Producto](#productos-product)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.3.1 [Venta](#ventas-sale)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.3.2 [Producto](#productos-product)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.3.3 [Venta](#ventas-sale)
 6. [Autor](#autor)
 
 ## Descripción
